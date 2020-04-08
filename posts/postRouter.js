@@ -14,7 +14,6 @@ router.get('/', (req, res) => {
   })
 })
 
-
 // GET /api/posts/:id... Returns the post object with the specified id:
 router.get('/:id', (req, res) => {
   Posts.getById(req.params.id)
@@ -93,7 +92,6 @@ router.put('/:id', (req, res) => {
 })
 
 // custom middleware
-
 function validatePostId(req, res, next) {
   // do your magic!
 }
