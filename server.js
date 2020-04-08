@@ -7,7 +7,12 @@ server.get('/', (req, res) => {
 });
 
 //custom middleware
+server.use(logger);
 
-function logger(req, res, next) {}
+function logger(req, res, next) {
+  // logs request method, request url, and a timestamp to the console
+  console.log(`Request Method: ${req.method}, Request URL: ${req.originalUrl}, TimeStamp: ${Date.now()}`)
+  next();
+}
 
 module.exports = server;
